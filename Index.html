@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK Game Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text"> 
+                <p>Game Developer</p>
+                <h1>Hi, I'm <span>Rahul Kumar</span> <br>from India</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hello! I'm Rahul, a passionate game developer with experience in creating FPS games and drone controllers.  
+                        I love exploring new technologies, optimizing gameplay mechanics, and teaching game development to juniors.  
+                        My journey in game development has been fueled by curiosity, creativity, and the drive to build immersive experiences.  
+                        Let's create something amazing together!
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education', event)">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Unity</span></li>
+                            <li><span>Unity 3D Game Development</span></li>
+                            <li><span>VR Development</span></li>
+                            <li><span>Blender</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - 2025</span><br>VR Development Intern at ACS Lab, IIT Mandi</li>
+                            <li><span>2019 - 2021</span><br>6+ months of experience teaching game development.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - Present</span><br>BTech from IIT Mandi, India</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- --------------services-------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h2>Game Devlopment</h2>
+                    <p></p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-vr-cardboard"></i>
+                    <h2>Vr Devlopment</h2>
+                    <p></p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cube"></i>
+                    <h2>Blender</h2>
+                    <p></p>
+                    <a href="#">Learn more</a>
+                </div> 
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ----------- Portfolio Section ----------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                   
+                    <img src="images/work-1.png" >
+                    <div class="layer">
+                        <h3>Fps game</h3>
+                        <p>This prototype of enemy ai and player controller script </p>
+                        <a href="project-fps.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" >
+                    <div class="layer">
+                        <h3>Vr Drone controller</h3>
+                        <p>This prototype of enemy ai and player controller script </p>
+                        <a href="project-drone.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" >
+                    <div class="layer">
+                        <h3>Space crafts model</h3>
+                        <p>This prototype of enemy ai and player controller script </p>
+                        <a href="project-space.html"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more </a>
+        </div>
+    </div>
+    <!-- ----------- Contact Section ----------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i>krindustries966@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9610040837</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                    <a href="images/RahulKumarResume.pdf" download class="btn btn2"> Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg" ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname, event) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwqVqbzg2UG21XzHvpd1wNRbMXBS_7XKbowmZKe0YmPYckvPiJVGVnY07Ju6l4DmzR_aw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            
+            msg.innerHTML = "Message Sent successfully"; // Show message immediately
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    setTimeout(function() {
+                        msg.innerHTML = ""
+                    }, 5000) // Remove message after 5 sec
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+
+    </script>
+</body>
+</html>

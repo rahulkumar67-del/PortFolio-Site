@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details - FPS Game</title>
+  <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #0d0d0d; /* black base */
+      color: #e5e5e5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 25px;
+      color: #fff;
+      background: #262626;
+      border: 1px solid #ff004f;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #ff004f;
+      transform: translateY(-3px);
+    }
+
+
+    /* Project Header */
+    .project-header {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+    }
+
+    .project-header h1 {
+      font-size: 32px;
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .project-tags {
+      margin: 10px 0;
+    }
+    .tag {
+      display: inline-block;
+      background: #222;
+      border: 1px solid  #ff004f;
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-right: 8px;
+      transition: 0.3s;
+    }
+    .tag:hover {
+      background: #ff004f;
+      color: #fff;
+    }
+
+    .project-meta {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* Project Body */
+    .project-body {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+    }
+
+    .project-body h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .project-body p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .video-container {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+      border: 2px solid#bb4268;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #262626;
+      color: #fff;
+      border: 1px solid #ff004f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #ff004f;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,0,79,0.3);
+    }
+    /* Footer Info */
+    .project-footer {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .project-footer h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .project-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-footer ul li {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    .project-footer ul li i {
+      color: #007bff;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Back Button -->
+    <a href="index.html#portfolio" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+    <!-- Project Header -->
+    <div class="project-header">
+      <h1>FPS Game Prototype</h1>
+      <div class="project-tags">
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+        <span class="tag">AI</span>
+        <span class="tag">Game Development</span>
+      </div>
+      <div class="project-meta">
+        <i class="fa-solid fa-calendar"></i> Posted: Sept 2025 &nbsp; | &nbsp;
+        <i class="fa-solid fa-code"></i> Category: Game Development
+      </div>
+    </div>
+
+    <!-- Project Body -->
+    <div class="project-body">
+      <h2>Project Description</h2>
+      <p>
+        This is a prototype FPS game built in Unity. It includes a fully scripted player controller,
+        enemy AI with state-based behavior, and smooth shooting mechanics. The game is designed to
+        test core mechanics like movement, aiming, and combat interactions in a 3D environment.
+      </p>
+
+      <!-- Video Showcase -->
+      <div class="video-container">
+        <video controls poster="images/fps-thumbnail.png">
+          <source src="videos/fps-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Download -->
+      <a href="downloads/fps-game.zip" download class="download-btn">
+        <i class="fa-solid fa-download"></i> Download Project
+      </a>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="project-footer">
+      <h3>Project Details</h3>
+      <ul>
+        <li><i class="fa-solid fa-cube"></i> Engine: Unity 2022</li>
+        <li><i class="fa-solid fa-layer-group"></i> Skills Used: Unity, C#, AI, Blender</li>
+        <li><i class="fa-solid fa-user"></i> Developed by: Rahul Kumar</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
