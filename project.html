@@ -102,7 +102,7 @@
     const projectId = urlParams.get("id");
 
     // 2. Load projects.json
-    fetch("projects.json")
+    fetch("data/projects.json")
       .then(response => response.json())
       .then(data => {
         const project = data[projectId];
