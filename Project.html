@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #e5e5e5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 25px;
+      color: #fff;
+      background: #262626;
+      border: 1px solid #ff004f;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+    .back-btn:hover { background: #ff004f; transform: translateY(-3px); }
+    .project-header, .project-body, .project-footer {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+    }
+    .project-header h1 { font-size: 32px; margin: 0 0 10px; color: #fff; }
+    .project-tags { margin: 10px 0; }
+    .tag {
+      display: inline-block;
+      background: #222;
+      border: 1px solid #ff004f;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-right: 8px;
+      transition: 0.3s;
+    }
+    .tag:hover { background: #ff004f; }
+    .project-meta { margin-top: 15px; font-size: 14px; color: #aaa; }
+    .project-body h2 { font-size: 24px; margin-bottom: 15px; color: #fff; }
+    .project-body p { line-height: 1.7; margin-bottom: 20px; color: #ccc; }
+    .video-container {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+      border: 2px solid #bb4268;
+    }
+    video { width: 100%; border-radius: 12px; }
+    .download-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #262626;
+      color: #fff;
+      border: 1px solid #ff004f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #ff004f;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,0,79,0.3);
+    }
+    .project-footer h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
+    .project-footer ul { list-style: none; padding: 0; margin: 0; }
+    .project-footer ul li { margin: 6px 0; font-size: 15px; color: #ccc; }
+    .project-footer ul li i { color: #007bff; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back Button -->
+    <a href="index.html#portfolio" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+    <!-- Dynamic Sections -->
+    <div class="project-header" id="project-header"></div>
+    <div class="project-body" id="project-body"></div>
+    <div class="project-footer" id="project-footer"></div>
+  </div>
+
+  <script>
+    // 1. Read project id from URL: project.html?id=fps
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("id");
+
+    // 2. Load projects.json
+    fetch("projects.json")
+      .then(response => response.json())
+      .then(data => {
+        const project = data[projectId];
+        if (!project) {
+          document.querySelector(".container").innerHTML =
+            "<h2>❌ Project not found</h2>";
+          return;
+        }
+
+        // 3. Fill Header
+        document.getElementById("project-header").innerHTML = `
+          <h1>${project.title}</h1>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+          </div>
+          <div class="project-meta">
+            <i class="fa-solid fa-calendar"></i> Posted: ${project.date} &nbsp; | &nbsp;
+            <i class="fa-solid fa-code"></i> Category: ${project.category}
+          </div>
+        `;
+
+        // 4. Fill Body
+        document.getElementById("project-body").innerHTML = `
+          <h2>Project Description</h2>
+          <p>${project.description}</p>
+          <div class="video-container">
+            <video controls poster="${project.poster}">
+              <source src="${project.video}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <a href="${project.download}" download class="download-btn">
+            <i class="fa-solid fa-download"></i> Download Project
+          </a>
+        `;
+
+        // 5. Fill Footer
+        document.getElementById("project-footer").innerHTML = `
+          <h3>Project Details</h3>
+          <ul>
+            ${Object.entries(project.details)
+              .map(([key, value]) => 
+                `<li><i class="fa-solid fa-circle-info"></i> ${key}: ${value}</li>`)
+              .join("")}
+          </ul>
+        `;
+      })
+      .catch(err => {
+        console.error(err);
+        document.querySelector(".container").innerHTML =
+          "<h2>⚠️ Failed to load project details.</h2>";
+      });
+  </script>
+</body>
+</html>
