@@ -2,7 +2,7 @@
   "fps": {
     "title": "FPS Game Project",
     "description": "This FPS prototype includes custom player controller, enemy AI, and shooting mechanics built in Unity.",
-    "video": "videos/fps-demo.mp4",
+    "video": "https://drive.google.com/file/d/1s32ERAe1zJx6xfN6tjtvjyGWpxF9HAbl/preview",
     "thumbnail": "images/work-1.png",
     "download": "downloads/fps-project.zip",
     "github": "https://github.com/rahulkumar67-del/fps-game",
@@ -13,7 +13,7 @@
   "drone": {
     "title": "VR Drone Controller",
     "description": "Immersive VR-based drone control system with real-time navigation and camera feed.",
-    "video": "videos/drone-demo.mp4",
+    "video": "https://drive.google.com/file/d/18dRAiwGzXRB52Tbx-E7rZ074fNfN7oYj/preview",
     "thumbnail": "images/work-2.png",
     "download": "downloads/drone-controller.zip",
     "github": "https://github.com/rahulkumar67-del/drone-vr",
@@ -24,7 +24,7 @@
   "space": {
     "title": "Spacecraft 3D Models",
     "description": "High-quality spacecraft models made in Blender for integration into space-themed games.",
-    "video": "videos/space-demo.mp4",
+    "video": "https://drive.google.com/file/d/1vt9DCYp7fVBhtnbWUCPAqACfXU8wXdjo/preview",
     "thumbnail": "images/work-3.png",
     "download": "downloads/space-models.zip",
     "github": "https://github.com/rahulkumar67-del/spacecraft-models",
