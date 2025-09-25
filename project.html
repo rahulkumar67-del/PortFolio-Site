@@ -96,19 +96,28 @@
     <div class="project-footer" id="project-footer"></div>
   </div>
 
-  <script>
-    // 1. Read project id from URL: project.html?id=fps
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get("id");
+<script>
+  // 1. Read project id from URL: project.html?id=fps
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get("id");
 
-    // 2. Load projects.json
-    fetch("data/projects.json")
-      .then(response => response.json())
+  if (!projectId) {
+    document.querySelector(".container").innerHTML = `
+      <a href="index.html#portfolio" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+      <h2>❌ No project id provided in URL</h2>
+    `;
+  } else {
+    fetch("./data/projects.json")
+      .then(response => {
+        if (!response.ok) throw new Error('HTTP ' + response.status + ' when fetching projects.json');
+        return response.json();
+      })
       .then(data => {
         const project = data[projectId];
         if (!project) {
           document.querySelector(".container").innerHTML =
-            "<h2>❌ Project not found</h2>";
+            `<a href="index.html#portfolio" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+             <h2>❌ Project not found: ${projectId}</h2>`;
           return;
         }
 
@@ -116,26 +125,38 @@
         document.getElementById("project-header").innerHTML = `
           <h1>${project.title}</h1>
           <div class="project-tags">
-            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+            ${Array.isArray(project.tech) ? project.tech.map(tag => `<span class="tag">${tag}</span>`).join("") : ''}
           </div>
           <div class="project-meta">
-            <i class="fa-solid fa-calendar"></i> Posted: ${project.date} &nbsp; | &nbsp;
-            <i class="fa-solid fa-code"></i> Category: ${project.category}
+            <i class="fa-solid fa-desktop"></i> Platform: ${project.platform || '—'} &nbsp; | &nbsp;
+            <i class="fa-solid fa-calendar"></i> Year: ${project.year || '—'}
           </div>
         `;
 
-        // 4. Fill Body
+        // 4. Fill Body (handle both local videos & Google Drive embeds)
+        let videoHTML = "";
+        if (project.video && typeof project.video === 'string' && project.video.includes("drive.google.com")) {
+          // If Drive preview link is provided, it often works as iframe src already.
+          videoHTML = `
+            <div class="video-container">
+              <iframe src="${project.video}" width="100%" height="480" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>`;
+        } else if (project.video) {
+          videoHTML = `
+            <div class="video-container">
+              <video controls poster="${project.thumbnail || ''}">
+                <source src="${project.video}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>`;
+        }
+
         document.getElementById("project-body").innerHTML = `
           <h2>Project Description</h2>
-          <p>${project.description}</p>
-          <div class="video-container">
-            <video controls poster="${project.poster}">
-              <source src="${project.video}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <a href="${project.download}" download class="download-btn">
-            <i class="fa-solid fa-download"></i> Download Project
+          <p>${project.description || ''}</p>
+          ${videoHTML}
+          <a href="${project.download || '#'}" class="download-btn" ${project.download ? 'download' : ''}>
+            <i class="fa-solid fa-download"></i> ${project.download ? 'Download Project' : 'Download (not available)'}
           </a>
         `;
 
@@ -143,18 +164,20 @@
         document.getElementById("project-footer").innerHTML = `
           <h3>Project Details</h3>
           <ul>
-            ${Object.entries(project.details)
-              .map(([key, value]) => 
-                `<li><i class="fa-solid fa-circle-info"></i> ${key}: ${value}</li>`)
-              .join("")}
+            <li><i class="fa-solid fa-circle-info"></i> Platform: ${project.platform || '—'}</li>
+            <li><i class="fa-solid fa-circle-info"></i> Year: ${project.year || '—'}</li>
+            <li><i class="fa-solid fa-circle-info"></i> GitHub: ${project.github ? `<a href="${project.github}" target="_blank">${project.github}</a>` : '—'}</li>
           </ul>
         `;
       })
       .catch(err => {
-        console.error(err);
+        console.error('Failed to load project details:', err);
         document.querySelector(".container").innerHTML =
-          "<h2>⚠️ Failed to load project details.</h2>";
+          `<a href="index.html#portfolio" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+           <h2>⚠️ Failed to load project details. See console for details.</h2>`;
       });
-  </script>
+  }
+</script>
+
 </body>
 </html>
