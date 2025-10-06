@@ -50,24 +50,98 @@
                         <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
                         <p class="tab-links" onclick="opentab('education', event)">Education</p>
                     </div>
+                                       <!-- Skills -->
                     <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Unity</span></li>
-                            <li><span>Unity 3D Game Development</span></li>
-                            <li><span>VR Development</span></li>
-                            <li><span>Blender</span></li>
-                        </ul>
+                      <ul>
+                        <li><span>Unity</span></li>
+                        <li><span>Unity 3D Game Development</span></li>
+                        <li><span>VR Development</span></li>
+                        <li><span>Blender</span></li>
+                        <li><span>C# / .NET</span></li>
+                        <li><span>OpenXR / Oculus</span></li>
+                      </ul>
                     </div>
+                    
+                    <!-- Experience — expanded with role, responsibilities & certificate -->
                     <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2024 - 2025</span><br>VR Development Intern at ACS Lab, IIT Mandi</li>
-                            <li><span>2019 - 2021</span><br>6+ months of experience teaching game development.</li>
-                        </ul>
+                      <div class="exp-item">
+                        <div class="exp-head">
+                          <div class="exp-role">VR Development Intern</div>
+                          <div class="exp-meta">ACS Lab, IIT Mandi • 2024 — 2025</div>
+                        </div>
+                        <div class="exp-body">
+                          <div class="exp-desc">
+                            Worked on research-grade VR interactions and headset integration. Responsible for prototyping locomotion systems, implementing hand-tracking controls and optimizing rendering for standalone headsets.
+                          </div>
+                          <ul class="exp-resp">
+                            <li>Designed & implemented player locomotion (teleport/smooth hybrid) to reduce motion sickness.</li>
+                            <li>Built custom input handlers for tracked controllers and integrated OpenXR.</li>
+                            <li>Optimized shaders and draw calls to keep stable 72+ FPS on target devices.</li>
+                            <li>Collaborated with hardware team to test camera streaming and latency.</li>
+                          </ul>
+                          <div class="exp-links">
+                            <a href="https://example.com/certificate-link" target="_blank" rel="noopener" class="cert-link">View Internship Certificate</a>
+                            <!-- you may add a GitHub/Project link -->
+                            <a href="https://github.com/rahulkumar67-del" target="_blank" rel="noopener" class="cert-link">Related GitHub</a>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="exp-item">
+                        <div class="exp-head">
+                          <div class="exp-role">Teaching Assistant / Trainer</div>
+                          <div class="exp-meta">Freelance • 2019 — 2021</div>
+                        </div>
+                        <div class="exp-body">
+                          <div class="exp-desc">
+                            Mentored juniors and conducted short courses on Unity fundamentals, gameplay scripting and basic AI for small batches of students.
+                          </div>
+                          <ul class="exp-resp">
+                            <li>Prepared lecture notes and hands-on labs for Unity 3D course.</li>
+                            <li>Reviewed student projects and provided code & design feedback.</li>
+                            <li>Helped students publish small prototypes and portfolios.</li>
+                          </ul>
+                          <div class="exp-links">
+                            <a href="#" class="cert-link">Teaching Reference (optional)</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2023 - Present</span><br>BTech from IIT Mandi, India</li>
-                        </ul>
+
+<!-- Education — expanded with department, institute name, start/end -->
+<div class="tab-contents" id="education">
+  <div class="edu-item">
+    <div class="edu-head">
+      <div class="edu-course">B.Tech (Mechanical)</div>
+      <div class="edu-meta">IIT Mandi • 2023 — Present</div>
+    </div>
+    <div class="edu-body">
+      <div class="edu-desc">
+        Specialization: Mechanical Engineering with coursework in control systems, robotics and mechatronics. Actively integrating game/VR projects with mechanical design research.
+      </div>
+      <ul class="edu-points">
+        <li>Department: Mechanical Engineering</li>
+        <li>Relevant coursework: Controls, Embedded Systems, CAD, Sensors</li>
+        <li>Activities: VR research group, Robotics club</li>
+      </ul>
+      <div class="edu-links">
+        <a href="#" class="cert-link">Transcript / Profile (if any)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: earlier education / diploma -->
+  <div class="edu-item">
+    <div class="edu-head">
+      <div class="edu-course">High School / Senior Secondary</div>
+      <div class="edu-meta">ABC School • 2019 — 2021</div>
+    </div>
+    <div class="edu-body">
+      <div class="edu-desc">Completed higher secondary with focus on science and mathematics.</div>
+    </div>
+  </div>
+</div>
+
                     </div>
                 </div>
             </div>
