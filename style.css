@@ -99,6 +99,92 @@ nav ul li a:hover::after {
     font-weight: 600;
     color: #fff;
 }
+/* ------------- Feedback (Freelancer-like) Styles -------------- */
+
+#feedback-panel { background: transparent; }
+.feedback-summary {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+  border: 1px solid rgba(255,0,79,0.06);
+}
+.summary-left { display:flex; align-items:center; gap:12px; }
+.avg-rating {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg,#ff9fb2,#ff004f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.avg-stars { font-size: 18px; color: #ffb3c7; }
+.rating-count { color: #ababab; font-size: 14px; margin-left:8px; }
+
+.feedback-list-wrap { margin-top:10px; }
+.feedback-list { display:flex; flex-direction:column; gap:12px; }
+.feedback-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,0,79,0.01));
+  border: 1px solid rgba(255,0,79,0.04);
+  padding: 14px;
+  border-radius: 10px;
+  color: #e7e7e7;
+}
+.feedback-card .meta {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+.feedback-card .meta .left {
+  font-weight:600;
+  color:#fff;
+}
+.feedback-card .meta .role { color:#c7a7b2; font-size:13px; margin-left:8px; font-weight:500; }
+.feedback-card .meta .date { color:#9c9c9c; font-size:12px; }
+.feedback-card .comment { color:#ddd; line-height:1.45; font-size:15px; }
+
+/* Star display */
+.star-display { color:#ffb3c7; font-size:16px; margin-left:6px; }
+
+/* Feedback form wrap */
+.feedback-form-wrap {
+  margin-top: 12px;
+  background:#1a1a1a;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid rgba(255,0,79,0.04);
+}
+.feedback-form-wrap.hidden { display:none; }
+
+/* Inputs for form - reuse your existing styles vibe */
+#fb-name, #fb-role, #fb-message, .rating-input { width:100%; margin:8px 0; }
+#fb-name, #fb-role {
+  background: #262626; padding:10px; border-radius:6px; color:#fff; border:0; outline:none;
+}
+#fb-message { background:#262626; padding:10px; border-radius:6px; color:#fff; border:0; outline:none; }
+
+/* Star input interactive style */
+.star-input .star {
+  font-size:22px;
+  cursor:pointer;
+  color:#666;
+  margin-right:6px;
+}
+.star-input .star.active { color:#ffb3c7; text-shadow: 0 0 6px rgba(255,0,79,0.06); }
+
+/* No-feedback */
+.no-feedback { color:#ababab; margin-top:8px; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedback-summary { flex-direction:column; align-items:flex-start; gap:10px; }
+  .summary-right { align-self:flex-end; }
+}
+
 
 /* Tabs */
 .tab-titles {

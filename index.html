@@ -216,33 +216,71 @@
         </div>
     </div>
     <!-- ----------- Contact Section ----------- -->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p> <i class="fa-solid fa-paper-plane"></i>krindustries966@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i> 9610040837</p>
-                    <div class="social-icons">
-                        <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
-                    </div>
-                    <a href="images/RahulKumarResume.pdf" download class="btn btn2"> Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg" ></span>
-                </div>
-            </div>
+  <!-- ----------- Contact + Feedback Section (Freelancer-like) ----------- -->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <!-- Left: Contact Info & Socials (kept) -->
+      <div class="contact-left">
+        <h1 class="sub-title">Contact & Socials</h1>
+        <p> <i class="fa-solid fa-paper-plane"></i> krindustries966@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> 9610040837</p>
+        <div class="social-icons">
+          <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
         </div>
-    </div>
+        <a href="images/RahulKumarResume.pdf" download class="btn btn2"> Download CV</a>
+      </div>
 
+      <!-- Right: Feedback (Freelancer-like) -->
+      <div class="contact-right">
+        <div id="feedback-panel">
+          <!-- Summary (avg rating + total feedbacks) -->
+          <div class="feedback-summary">
+            <div class="summary-left">
+              <div id="avg-rating" class="avg-rating">0.0</div>
+              <div class="avg-stars" id="avg-stars"></div>
+              <div class="rating-count" id="rating-count">0 reviews</div>
+            </div>
+            <div class="summary-right">
+              <button id="open-feedback-btn" class="btn btn2">Leave Feedback</button>
+            </div>
+          </div>
+
+          <!-- Feedback list -->
+          <div id="feedback-list-wrap">
+            <div id="feedback-list" class="feedback-list"></div>
+            <div id="feedback-empty" class="no-feedback">No feedback yet. Be the first to leave feedback!</div>
+          </div>
+
+          <!-- Feedback Form Modal-ish inline (collapsible) -->
+          <div id="feedback-form-wrap" class="feedback-form-wrap hidden">
+            <h2 style="margin-bottom:10px;color:#fff">Leave a Feedback</h2>
+            <input id="fb-name" type="text" placeholder="Your name (required)" />
+            <input id="fb-role" type="text" placeholder="Your role / company (e.g., Client, Manager)" />
+            <div class="rating-input">
+              <label style="color:#fff;margin-right:8px;">Your rating:</label>
+              <div id="star-input" class="star-input" data-rating="5">
+                <span data-value="1" class="star">☆</span>
+                <span data-value="2" class="star">☆</span>
+                <span data-value="3" class="star">☆</span>
+                <span data-value="4" class="star">☆</span>
+                <span data-value="5" class="star">☆</span>
+              </div>
+            </div>
+            <textarea id="fb-message" rows="5" placeholder="Write your feedback (required)"></textarea>
+            <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
+              <button id="fb-submit" class="btn btn2">Submit</button>
+              <button id="fb-cancel" class="btn" style="background:transparent;border-color:#666">Cancel</button>
+              <div id="fb-form-msg" style="margin-left:12px;color:#61b752"></div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end contact-right -->
+    </div>
+  </div>
+</div>
 
 
 
@@ -286,5 +324,25 @@
         })
 
     </script>
+
+
+<!-- Modal Overlay (Service Details) -->
+<div id="service-modal-overlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal" role="document" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <h3 id="modal-title">Service Title</h3>
+      <button id="modal-close" class="close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <p id="modal-desc">Service description...</p>
+      <ul id="modal-points">
+        <li>Point one</li>
+        <li>Point two</li>
+      </ul>
+      <div class="meta" id="modal-meta">Starting at: ₹0 • Delivery: 1 week</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
