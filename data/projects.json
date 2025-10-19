@@ -31,5 +31,16 @@
     "tech": ["Blender", "3D Modelling"],
     "platform": "Assets",
     "year": "2025"
+  },
+   "Flood Simulation": {
+    "title": "VR Flood Simulation",
+    "description": "Real location based 3d model based flood simulation ",
+    "video": "https://drive.google.com/file/d/19z0dlUTJJxL2ZR7g38v9H5_KJYVOak6G/preview",
+    "thumbnail": "images/work-4.png",
+    "download": "downloads/space-models.zip",
+    "github": "https://github.com/rahulkumar67-del/spacecraft-models",
+    "tech": ["Polycam","Unity Vr", "3D Modelling","Unity Hdrp"],
+    "platform": "Assets",
+    "year": "2025"
   }
 }
