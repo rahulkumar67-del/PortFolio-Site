@@ -437,3 +437,158 @@ form .btn2{
     margin-top: -40px;
     display: block;
 }
+
+/* ---------------- Contact + Feedback tweaks (append to end of style.css) ---------------- */
+
+/* make sure contact columns behave nicely and stack on small screens */
+.contact-left { flex-basis: 38%; min-width: 240px; }
+.contact-right { flex-basis: 60%; min-width: 300px; }
+
+/* keep left column content tidy */
+.contact-left .sub-title { margin-bottom: 12px; font-size: 36px; }
+.contact-left p { color: #d6d6d6; line-height: 1.6; }
+.contact-left .social-icons { margin-top: 18px; }
+.contact-left .btn.btn2 { margin-top: 18px; }
+
+/* Feedback summary tweaks */
+.feedback-summary { align-items: center; gap: 12px; }
+.avg-rating {
+  font-size: 28px;
+  font-weight: 700;
+  /* gradient text, cross-browser */
+  background: linear-gradient(90deg,#ff9fb2,#ff004f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.avg-stars { color: #ffb3c7; font-size: 18px; }
+.rating-count { color: #bdbdbd; font-size: 13px; }
+
+/* Feedback list spacing */
+.feedback-list { margin-top: 6px; }
+.feedback-card { transition: transform .15s, box-shadow .15s; }
+.feedback-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+
+/* form controls — consistent with other inputs, with subtle focus */
+.feedback-form-wrap input,
+.feedback-form-wrap textarea,
+#fb-name, #fb-role, #fb-message {
+  background: #262626;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #fff;
+  outline: none;
+  transition: box-shadow .15s, border-color .15s;
+}
+.feedback-form-wrap input:focus,
+.feedback-form-wrap textarea:focus,
+#fb-name:focus, #fb-role:focus, #fb-message:focus {
+  box-shadow: 0 4px 18px rgba(255,0,79,0.06);
+  border-color: rgba(255,0,79,0.25);
+}
+
+/* star input controls */
+.star-input { display:inline-flex; align-items:center; gap:6px; }
+.star-input .star { font-size:22px; cursor:pointer; color:#6d6d6d; user-select:none; }
+.star-input .star.active { color:#ffb3c7; text-shadow: 0 0 6px rgba(255,0,79,0.06); }
+
+/* feedback meta & comment */
+.feedback-card .meta .left { display:flex; align-items:center; gap:8px; }
+.feedback-card .meta .role { color:#c7a7b2; font-size:13px; margin-left:6px; font-weight:500; }
+
+/* disabled/neutral style for See more button and other disabled buttons */
+.btn.disabled {
+  background: transparent !important;
+  border-color: rgba(255,0,79,0.12);
+  color: rgba(255,255,255,0.45);
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* button focus outline for keyboard users */
+.btn:focus, .btn2:focus, .close-btn:focus {
+  outline: 3px solid rgba(255,0,79,0.12);
+  outline-offset: 3px;
+}
+
+/* make contact + feedback area more compact on small screens */
+@media (max-width: 900px) {
+  .contact-left, .contact-right { flex-basis: 100%; }
+  .container { padding: 18px 6%; }
+  .feedback-summary { flex-direction: column; align-items:flex-start; gap:10px; }
+  .avg-rating { font-size: 26px; }
+}
+
+/* very small screens — ensure star and inputs remain usable */
+@media (max-width: 420px) {
+  .star-input .star { font-size: 20px; }
+  .avg-rating { font-size: 22px; }
+  .contact-left .sub-title { font-size: 28px; }
+}
+
+
+
+/* ---- Experience & Education styling ---- */
+.exp-item, .edu-item {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,0,79,0.04);
+}
+.exp-head, .edu-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px;
+}
+.exp-role, .edu-course {
+  font-weight:700;
+  color:#fff;
+  font-size:16px;
+}
+.exp-meta, .edu-meta {
+  color:#c7a7b2;
+  font-size:13px;
+}
+.exp-desc, .edu-desc {
+  color:#d5d5d5;
+  margin-bottom:8px;
+}
+.exp-resp, .edu-points {
+  margin-left:16px;
+  color:#d0c0c7;
+  margin-bottom:8px;
+}
+.exp-resp li, .edu-points li { margin:6px 0; line-height:1.45; }
+
+.exp-links, .edu-links {
+  margin-top:8px;
+}
+.cert-link {
+  display:inline-block;
+  text-decoration:none;
+  color:#ff004f;
+  border:1px solid rgba(255,0,79,0.08);
+  padding:6px 10px;
+  border-radius:8px;
+  background:transparent;
+  transition:background .2s, transform .15s;
+  font-size:13px;
+}
+.cert-link:hover {
+  background:#ff004f;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+/* Small-screen tweaks */
+@media (max-width:768px) {
+  .exp-head, .edu-head { flex-direction:column; align-items:flex-start; gap:6px; }
+  .exp-meta, .edu-meta { font-size:13px; }
+}
