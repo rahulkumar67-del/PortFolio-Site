@@ -592,3 +592,15 @@ form .btn2{
   .exp-head, .edu-head { flex-direction:column; align-items:flex-start; gap:6px; }
   .exp-meta, .edu-meta { font-size:13px; }
 }
+/* --- FIX: make sure feedback button is above overlay and clickable --- */
+.feedback-summary {
+  position: relative;
+  z-index: 1;
+}
+
+#open-feedback-btn {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  pointer-events: auto !important;
+}
