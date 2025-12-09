@@ -89,7 +89,7 @@ document.getElementById('cancel-review').addEventListener('click', () => formWra
 
 // --- C. Submit & Load Reviews ---
 // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT URL
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxRZVdNg3fy9lgXnl77X4rmlw-Uh9my_XIfCf8Kv5YP0A0xhQxqBZpYwKL6f9cS4Vy3/exec"; 
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw07LyqIf1eC5f481JjtX_VnnbDvuSYuZ2UePHVo6DNirZU0zq2t8_XSMzI32ly33_sUQ/exec"; 
 
 const form = document.forms['submit-to-google-sheet'];
 const statusMsg = document.getElementById('form-status');
