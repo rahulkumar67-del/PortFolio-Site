@@ -604,3 +604,55 @@ form .btn2{
   cursor: pointer;
   pointer-events: auto !important;
 }
+/* --------------- Service Modal Styles --------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+}
+.modal-overlay.show {
+    opacity: 1; visibility: visible;
+}
+.modal {
+    background: #262626;
+    width: 90%; max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ff004f;
+    position: relative;
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+.modal-overlay.show .modal {
+    transform: translateY(0);
+}
+.modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px;
+}
+.close-btn {
+    background: none; border: none;
+    color: #fff; font-size: 24px; cursor: pointer;
+}
+.modal-body ul li {
+    list-style: circle; margin-left: 20px; color: #ccc; margin-bottom: 5px;
+}
+.modal-body .meta {
+    margin-top: 15px; color: #ff004f; font-weight: bold;
+}
+
+/* --------------- Misc Helpers --------------- */
+.hidden { display: none !important; }
+.hidden-work { opacity: 0; transition: opacity 0.5s ease; }
+
+/* Feedback Stars */
+.star-input .star {
+    font-size: 24px; cursor: pointer; color: #555;
+}
+.star-input .star.active {
+    color: #ff004f; /* Using your theme pink */
+}

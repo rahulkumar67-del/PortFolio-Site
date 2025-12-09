@@ -10,11 +10,10 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" class="logo">
+                <img src="images/logo.png" class="logo" alt="Logo">
                 <ul>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -30,7 +29,7 @@
         </div>
     </div>
 
-    <!-- About Section -->
+      <!-- About Section -->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -153,206 +152,163 @@
         </div>
     </div>
 
-
-    <!-- --------------services-------------- -->
     <div id="services">
         <div class="container">
             <h1 class="sub-title">My Services</h1>
             <div class="services-list">
                 <div>
                     <i class="fa-solid fa-gamepad"></i>
-                    <h2>Game Devlopment</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
+                    <h2>Game Development</h2>
+                    <p>Full-cycle Unity game development for PC and Mobile.</p>
+                    <a href="#" class="learn-more" data-service="game">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-vr-cardboard"></i>
-                    <h2>Vr Devlopment</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
+                    <h2>VR Development</h2>
+                    <p>Immersive VR experiences for Oculus and OpenXR.</p>
+                    <a href="#" class="learn-more" data-service="vr">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-cube"></i>
-                    <h2>Blender</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
+                    <h2>Blender 3D</h2>
+                    <p>High-quality assets and environments.</p>
+                    <a href="#" class="learn-more" data-service="blender">Learn more</a>
                 </div> 
             </div>
-
         </div>
-
     </div>
 
-    <!-- ----------- Portfolio Section ----------- -->
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
                 <div class="work">
-                   
-                    <img src="images/work-1.png" >
+                    <img src="images/work-1.png" alt="FPS Game">
                     <div class="layer">
-                        <h3>Fps game</h3>
-                        <p>This prototype of enemy ai and player controller script </p>
+                        <h3>FPS Game</h3>
+                        <p>Advanced AI and Player Controller prototype.</p>
                         <a href="project.html?id=fps"><i class="fa-solid fa-link"></i></a>
-                      
-
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-2.png" >
+                    <img src="images/work-2.png" alt="VR Drone">
                     <div class="layer">
-                        <h3>Vr Drone controller</h3>
-                        <p>Immersive VR-based drone control system with real-time navigation and camera feed. </p>
-                         <a href="project.html?id=drone"><i class="fa-solid fa-link"></i></a>
-                     
+                        <h3>VR Drone Controller</h3>
+                        <p>Immersive VR-based drone control system.</p>
+                        <a href="project.html?id=drone"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-3.png" >
+                    <img src="images/work-3.png" alt="Spacecraft">
                     <div class="layer">
-                        <h3>Space crafts model</h3>
-                        <p>THigh-quality spacecraft models made in Blender for integration into space-themed games. </p>
-                         <a href="project.html?id=space"><i class="fa-solid fa-link"></i></a>
+                        <h3>Spacecraft Models</h3>
+                        <p>High-quality 3D assets for space games.</p>
+                        <a href="project.html?id=space"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
-                 <div class="work">
-                    <img src="images/work-4.png" >
+                 <div class="work hidden-work" style="display:none;">
+                    <img src="images/work-4.png" alt="Flood Sim">
                     <div class="layer">
-                        <h3>Space crafts model</h3>
-                        <p>Real location based 3d model based flood simulation  </p>
-                         <a href="project.html?id=Flood Simulation"><i class="fa-solid fa-link"></i></a>
+                        <h3>Flood Simulation</h3>
+                        <p>Real location-based 3D simulation.</p>
+                        <a href="project.html?id=Flood Simulation"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See more </a>
+            <a href="#" class="btn" id="see-more-btn">See more</a>
         </div>
     </div>
- <!-- ----------- Contact + Feedback Section (Freelancer-like) ----------- -->
-<div id="contact">
-  <div class="container">
-    <div class="row">
-      <!-- Left: Contact Info & Socials (kept) -->
-      <div class="contact-left">
-        <h1 class="sub-title">Contact & Socials</h1>
-        <p> <i class="fa-solid fa-paper-plane"></i> krindustries966@gmail.com</p>
-        <p><i class="fa-solid fa-phone"></i> 9610040837</p>
-        <div class="social-icons">
-          <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> krindustries966@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9610040837</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                    <a href="images/RahulKumarResume.pdf" download class="btn btn2">Download CV</a>
+                </div>
+
+                <div class="contact-right">
+                    <div id="feedback-panel">
+                        <div class="feedback-summary">
+                            <div class="summary-left">
+                                <div id="avg-rating" class="avg-rating">0.0</div>
+                                <div class="avg-stars" id="avg-stars"></div>
+                                <div class="rating-count" id="rating-count">0 reviews</div>
+                            </div>
+                            <div class="summary-right">
+                                <button id="open-feedback-btn" class="btn btn2" type="button">Leave Feedback</button>
+                            </div>
+                        </div>
+
+                        <div id="feedback-form-wrap" class="feedback-form-wrap hidden">
+                            <h2 style="color:#fff; margin-bottom:10px;">Leave Feedback</h2>
+                            <form name="submit-to-google-sheet">
+                                <input id="fb-name" name="Name" type="text" placeholder="Your Name" required>
+                                <input id="fb-role" name="Role" type="text" placeholder="Your Role (Optional)">
+                                
+                                <div class="rating-input">
+                                    <label style="color:#fff;">Rating: </label>
+                                    <div id="star-input" class="star-input" data-rating="5">
+                                        <span data-value="1" class="star active">★</span>
+                                        <span data-value="2" class="star active">★</span>
+                                        <span data-value="3" class="star active">★</span>
+                                        <span data-value="4" class="star active">★</span>
+                                        <span data-value="5" class="star active">★</span>
+                                    </div>
+                                    <input type="hidden" name="Rating" id="rating-value" value="5">
+                                </div>
+
+                                <textarea id="fb-message" name="Message" rows="5" placeholder="Your Message" required></textarea>
+                                
+                                <div style="margin-top:10px;">
+                                    <button type="submit" id="fb-submit" class="btn btn2">Submit</button>
+                                    <button type="button" id="fb-cancel" class="btn" style="background:transparent; border:none; color:#999;">Cancel</button>
+                                </div>
+                                <span id="fb-form-msg"></span>
+                            </form>
+                        </div>
+
+                        <div id="feedback-list" class="feedback-list"></div>
+                        <div id="feedback-empty" class="no-feedback">Loading reviews...</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="images/RahulKumarResume.pdf" download class="btn btn2"> Download CV</a>
-      </div>
-
-      <!-- Right: Feedback (Freelancer-like) -->
-      <div class="contact-right">
-        <div id="feedback-panel">
-          <!-- Summary (avg rating + total feedbacks) -->
-          <div class="feedback-summary">
-            <div class="summary-left">
-              <div id="avg-rating" class="avg-rating">0.0</div>
-              <div class="avg-stars" id="avg-stars"></div>
-              <div class="rating-count" id="rating-count">0 reviews</div>
-            </div>
-            <div class="summary-right">
-              <!-- replace existing with -->
-                <button id="open-feedback-btn" class="btn btn2" type="button">Leave Feedback</button>
-
-            </div>
-          </div>
-
-          <!-- Feedback list -->
-          <div id="feedback-list-wrap">
-            <div id="feedback-list" class="feedback-list"></div>
-            <div id="feedback-empty" class="no-feedback">No feedback yet. Be the first to leave feedback!</div>
-          </div>
-
-          <!-- Feedback Form (collapsible) -->
-          <div id="feedback-form-wrap" class="feedback-form-wrap hidden">
-            <h2 style="margin-bottom:10px;color:#fff">Leave a Feedback</h2>
-            <input id="fb-name" type="text" placeholder="Your name (required)" />
-            <input id="fb-role" type="text" placeholder="Your role / company (e.g., Client, Manager)" />
-            <div class="rating-input">
-              <label style="color:#fff;margin-right:8px;">Your rating:</label>
-              <div id="star-input" class="star-input" data-rating="5">
-                <span data-value="1" class="star">☆</span>
-                <span data-value="2" class="star">☆</span>
-                <span data-value="3" class="star">☆</span>
-                <span data-value="4" class="star">☆</span>
-                <span data-value="5" class="star">☆</span>
-              </div>
-            </div>
-            <textarea id="fb-message" rows="5" placeholder="Write your feedback (required)"></textarea>
-            <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
-              <button id="fb-submit" class="btn btn2">Submit</button>
-              <button id="fb-cancel" class="btn" style="background:transparent;border-color:#666">Cancel</button>
-              <div id="fb-form-msg" style="margin-left:12px;color:#61b752"></div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end contact-right -->
     </div>
-  </div>
-</div>
 
-    <!-- JavaScript for Tab Switching -->
+    <div id="service-modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Service Title</h3>
+                <button id="modal-close" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-desc">Description</p>
+                <ul id="modal-points"></ul>
+                <div class="meta" id="modal-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
     <script>
+        // Inline Tab Switching Script
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
         function opentab(tabname, event) {
-            for (let tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (let tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
+            for (let tablink of tablinks) { tablink.classList.remove("active-link"); }
+            for (let tabcontent of tabcontents) { tabcontent.classList.remove("active-tab"); }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwqVqbzg2UG21XzHvpd1wNRbMXBS_7XKbowmZKe0YmPYckvPiJVGVnY07Ju6l4DmzR_aw/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-    
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            
-            msg.innerHTML = "Message Sent successfully"; // Show message immediately
-            
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    setTimeout(function() {
-                        msg.innerHTML = ""
-                    }, 5000) // Remove message after 5 sec
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-
-    </script>
-
-
-<!-- Modal Overlay (Service Details)
-<div id="service-modal-overlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal" role="document" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title">Service Title</h3>
-      <button id="modal-close" class="close-btn" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-body" id="modal-body">
-      <p id="modal-desc">Service description...</p>
-      <ul id="modal-points">
-        <li>Point one</li>
-        <li>Point two</li>
-      </ul>
-      <div class="meta" id="modal-meta">Starting at: ₹0 • Delivery: 1 week</div>
-    </div>
-  </div>
-</div> -->
-
 </body>
 </html>
