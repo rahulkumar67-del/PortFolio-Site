@@ -1,46 +1,46 @@
 {
   "fps": {
-    "title": "FPS Game Project",
-    "description": "This FPS prototype includes custom player controller, enemy AI, and shooting mechanics built in Unity.",
+    "title": "FPS Game Prototype",
+    "description": "An FPS prototype built in Unity featuring a custom player controller, enemy AI with patrol/chase/attack states, and core shooting mechanics. Focused on snappy game-feel, modular AI behaviour, and lean architecture for future expansion.",
     "video": "https://drive.google.com/file/d/1s32ERAe1zJx6xfN6tjtvjyGWpxF9HAbl/preview",
     "thumbnail": "images/work-1.png",
-    "download": "downloads/fps-project.zip",
+    "download": "",
     "github": "https://github.com/rahulkumar67-del/fps-game",
-    "tech": ["Unity", "C#", "AI"],
+    "tech": ["Unity", "C#", "AI", "FPS"],
     "platform": "PC / VR Ready",
     "year": "2025"
   },
   "drone": {
     "title": "VR Drone Controller",
-    "description": "Immersive VR-based drone control system with real-time navigation and camera feed.",
+    "description": "Immersive VR-based drone control system with real-time first-person navigation and live camera feed. Built with custom OpenXR input handlers and a hybrid teleport/smooth locomotion model for comfort.",
     "video": "https://drive.google.com/file/d/18dRAiwGzXRB52Tbx-E7rZ074fNfN7oYj/preview",
     "thumbnail": "images/work-2.png",
-    "download": "downloads/drone-controller.zip",
-    "github": "https://github.com/rahulkumar67-del/drone-vr",
-    "tech": ["Unity", "VR", "C#"],
-    "platform": "VR",
+    "download": "",
+    "github": "https://github.com/rahulkumar67-del/VR_DroneController",
+    "tech": ["Unity", "VR", "OpenXR", "C#"],
+    "platform": "VR (Quest / OpenXR)",
     "year": "2025"
   },
   "space": {
     "title": "Spacecraft 3D Models",
-    "description": "High-quality spacecraft models made in Blender for integration into space-themed games.",
+    "description": "A curated set of high-quality spacecraft models authored in Blender — topology optimised for real-time engines, PBR-textured, and ready to drop into Unity or Unreal space-themed projects.",
     "video": "https://drive.google.com/file/d/1vt9DCYp7fVBhtnbWUCPAqACfXU8wXdjo/preview",
     "thumbnail": "images/work-3.png",
-    "download": "downloads/space-models.zip",
-    "github": "https://github.com/rahulkumar67-del/spacecraft-models",
-    "tech": ["Blender", "3D Modelling"],
-    "platform": "Assets",
+    "download": "",
+    "github": "https://github.com/rahulkumar67-del",
+    "tech": ["Blender", "3D Modelling", "PBR Textures"],
+    "platform": "Game Assets",
     "year": "2025"
   },
-   "Flood Simulation": {
+  "flood": {
     "title": "VR Flood Simulation",
-    "description": "Real location based 3d model based flood simulation ",
+    "description": "A real-location, photogrammetry-driven flood simulation in VR. Real terrain captured with Polycam, refined in Blender, and integrated into Unity with HDRP water — optimised to 90–110 FPS while ingesting live flow parameters.",
     "video": "https://drive.google.com/file/d/19z0dlUTJJxL2ZR7g38v9H5_KJYVOak6G/preview",
     "thumbnail": "images/work-4.png",
-    "download": "downloads/space-models.zip",
-    "github": "https://github.com/rahulkumar67-del/spacecraft-models",
-    "tech": ["Polycam","Unity Vr", "3D Modelling","Unity Hdrp"],
-    "platform": "Assets",
+    "download": "",
+    "github": "https://github.com/rahulkumar67-del",
+    "tech": ["Polycam", "Unity HDRP", "VR", "Blender", "Photogrammetry"],
+    "platform": "VR / Research",
     "year": "2025"
   }
 }

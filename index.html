@@ -1,384 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RK Game Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Rahul Kumar — Game &amp; VR Developer | Unity • OpenXR • Blender</title>
+  <meta name="title" content="Rahul Kumar — Game & VR Developer | Unity • OpenXR • Blender" />
+  <meta name="description" content="Portfolio of Rahul Kumar — Game Developer and VR/AR Engineer specializing in Unity 3D, OpenXR, VR locomotion, computer vision (OpenCV), and immersive simulations." />
+  <meta name="keywords" content="Rahul Kumar, Game Developer, VR Developer, Unity Developer, OpenXR, Blender, AR Glasses, Photogrammetry, Portfolio, IIT Mandi" />
+  <meta name="author" content="Rahul Kumar" />
+  <meta name="theme-color" content="#0a0f1a" />
+  <link rel="canonical" href="https://rahulkumar.dev/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rahulkumar.dev/" />
+  <meta property="og:title" content="Rahul Kumar — Game & VR Developer" />
+  <meta property="og:description" content="Unity 3D • VR/AR • OpenXR • Blender — Building immersive interactive experiences and simulations." />
+  <meta property="og:image" content="https://rahulkumar.dev/images/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rahulkumar.dev/" />
+  <meta property="twitter:title" content="Rahul Kumar — Game & VR Developer" />
+  <meta property="twitter:description" content="Unity 3D • VR/AR • OpenXR • Blender — Building immersive interactive experiences and simulations." />
+  <meta property="twitter:image" content="https://rahulkumar.dev/images/og-image.png" />
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous" defer></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rahul Kumar",
+    "url": "https://rahulkumar.dev",
+    "image": "https://rahulkumar.dev/images/user.jpg",
+    "jobTitle": "Game & VR Developer",
+    "worksFor": { "@type": "Organization", "name": "Freelance / IIT Mandi" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Mandi" },
+    "sameAs": [
+      "https://github.com/rahulkumar67-del",
+      "https://www.linkedin.com/in/rahul-kumar-a51002299/"
+    ],
+    "knowsAbout": ["Unity 3D", "VR Development", "OpenXR", "Blender", "Computer Vision", "OpenCV", "Photogrammetry", "C#"]
+  }
+  </script>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+  <!-- ============== HEADER ============== -->
+  <header id="header">
+    <div class="container">
+      <nav>
+        <a href="#header" class="brand" aria-label="Home">
+          <img src="images/logo.png" alt="Rahul Kumar logo" class="logo" />
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="navMenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="images/Rahul Kumar Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Resume</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-text">
+        <p class="eyebrow">Game &amp; VR Developer</p>
+        <h1>Hi, I'm <span>Rahul Kumar</span><br />I build immersive worlds.</h1>
+        <p class="lede">Unity 3D • OpenXR • Computer Vision • Blender — crafting VR/AR experiences, simulations, and interactive prototypes that ship.</p>
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn btn-primary">See My Work</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== ABOUT ============== -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="images/user.jpg" alt="Portrait of Rahul Kumar" loading="lazy" />
+        </div>
+
+        <div class="about-col-2">
+          <h2 class="sub-title">About Me</h2>
+          <p>
+            I'm <strong>Rahul Kumar</strong> — a Game &amp; VR developer focused on building immersive, technically grounded interactive experiences. My work spans <strong>Unity 3D, VR/AR development, and computer vision</strong> with OpenCV, and I enjoy turning hard engineering problems into polished, performant prototypes.
+          </p>
+          <p>
+            Currently pursuing B.Tech (Mechanical) at <strong>IIT Mandi</strong>, I've shipped VR interaction systems, AR glasses for the visually impaired, and real-world flood simulations using photogrammetry — always with a bias toward performance, clarity, and good UX.
+          </p>
+
+          <div class="tab-titles" role="tablist">
+            <button class="tab-links active-link" data-tab="skills" role="tab" aria-selected="true">Skills</button>
+            <button class="tab-links" data-tab="experience" role="tab" aria-selected="false">Experience</button>
+            <button class="tab-links" data-tab="education" role="tab" aria-selected="false">Education</button>
+          </div>
+
+          <!-- Skills -->
+          <div class="tab-contents active-tab" id="skills" role="tabpanel">
+            <ul class="skills-grid">
+              <li><strong>Unity 3D</strong><span>Game &amp; VR development, HDRP/URP</span></li>
+              <li><strong>OpenXR / Oculus</strong><span>Hand tracking, locomotion, input</span></li>
+              <li><strong>C# / .NET</strong><span>Gameplay systems &amp; tooling</span></li>
+              <li><strong>Blender</strong><span>3D modelling &amp; environment design</span></li>
+              <li><strong>Photogrammetry</strong><span>Polycam → Blender pipeline</span></li>
+              <li><strong>OpenCV</strong><span>Real-time frame processing</span></li>
+              <li><strong>3D Simulation</strong><span>CFD-driven VR visualisation</span></li>
+              <li><strong>SolidWorks / CAD</strong><span>Mechanical modelling</span></li>
+            </ul>
+          </div>
+
+          <!-- Experience -->
+          <div class="tab-contents" id="experience" role="tabpanel">
+            <div class="exp-item">
+              <div class="exp-head">
+                <div class="exp-role">VR Development Intern</div>
+                <div class="exp-meta">ACS Lab, IIT Mandi • 2024 — 2025</div>
+              </div>
+              <div class="exp-body">
+                <p class="exp-desc">Built research-grade VR interactions and headset integration — prototyped locomotion systems, hand-tracking controls, and rendering optimizations for standalone headsets.</p>
+                <ul class="exp-resp">
+                  <li>Designed hybrid teleport/smooth locomotion to reduce motion sickness.</li>
+                  <li>Built custom input handlers for tracked controllers; integrated OpenXR.</li>
+                  <li>Optimized shaders &amp; draw calls to hold a steady 72+ FPS on target devices.</li>
+                  <li>Collaborated with the hardware team on camera streaming &amp; latency tests.</li>
                 </ul>
-            </nav>
-            <div class="header-text"> 
-                <p>Game Developer</p>
-                <h1>Hi, I'm <span>Rahul Kumar</span> <br>from India</h1>
+                <div class="exp-links">
+                  <a href="https://drive.google.com/file/d/1fIigLsMPIXL6EtCqmQKqT_o0OdBzvohA/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">Internship Certificate</a>
+                  <a href="https://github.com/rahulkumar67-del/VR_DroneController" target="_blank" rel="noopener" class="cert-link">GitHub</a>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
 
-    <!-- About Section -->
-   <!-- About Section -->
-<div id="about">
-  <div class="container">
-    <div class="row">
-      <div class="about-col-1">
-        <img src="images/user.jpg" alt="Rahul Kumar">
+            <div class="exp-item">
+              <div class="exp-head">
+                <div class="exp-role">AR Glasses Development Intern</div>
+                <div class="exp-meta">Glimpse Tech (Remote) • June 2025</div>
+              </div>
+              <div class="exp-body">
+                <p class="exp-desc">Developed an AR-glasses solution to assist visually impaired users — combining real-time vision with intuitive feedback.</p>
+                <ul class="exp-resp">
+                  <li>Built interactive UI systems in Unity with backend logic wiring.</li>
+                  <li>Used OpenCV for real-time frame processing across multiple camera modes.</li>
+                  <li>Implemented UDP communication for efficient inter-module data sharing.</li>
+                  <li>Reviewed and mentored student projects on code structure &amp; workflow.</li>
+                </ul>
+                <div class="exp-links">
+                  <a href="https://drive.google.com/file/d/1EkbydPc-JJbb78G5tUM5j32qb1PR8_0w/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">Internship Certificate</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-head">
+                <div class="exp-role">Freelancer — VR Environment &amp; Simulation</div>
+                <div class="exp-meta">ClimaTech • 2024 — Present</div>
+              </div>
+              <div class="exp-body">
+                <p class="exp-desc">Designed flood-simulation experiences and photogrammetry-driven environment builds for VR research.</p>
+                <ul class="exp-resp">
+                  <li>Implemented player movement &amp; interaction across VR environments.</li>
+                  <li>Captured real-world locations via Polycam, refined in Blender.</li>
+                  <li>Configured HDRP water systems; optimized to 90–110 FPS.</li>
+                  <li>Visualized live flow parameters from the hardware/cloud team.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="tab-contents" id="education" role="tabpanel">
+            <div class="edu-item">
+              <div class="edu-head">
+                <div class="edu-course">B.Tech, Mechanical Engineering</div>
+                <div class="edu-meta">IIT Mandi • 2023 — Present</div>
+              </div>
+              <div class="edu-body">
+                <p class="edu-desc">Coursework in Modelling &amp; Simulation, CFD, and CAD — bridging mechanical design with VR/game projects.</p>
+                <ul class="edu-points">
+                  <li>Relevant coursework: CFD, Modelling &amp; Simulation, 3D Printing, CAD</li>
+                  <li>Activities: VR research group, LiDAR mapping</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-head">
+                <div class="edu-course">Senior Secondary (XII)</div>
+                <div class="edu-meta">2020 — 2022</div>
+              </div>
+              <div class="edu-body">
+                <p class="edu-desc">Focus on Science &amp; Mathematics — foundation for engineering and computer graphics work.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SERVICES ============== -->
+  <section id="services">
+    <div class="container">
+      <h2 class="sub-title">What I Do</h2>
+      <div class="services-list">
+        <article>
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          <h3>Game Development</h3>
+          <p>End-to-end Unity 3D game development — gameplay systems, AI, player controllers, and polished prototypes.</p>
+          <a href="#portfolio">See examples →</a>
+        </article>
+        <article>
+          <i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i>
+          <h3>VR / AR Development</h3>
+          <p>Immersive VR/AR experiences with OpenXR — locomotion, hand tracking, UI, and headset-grade performance tuning.</p>
+          <a href="#portfolio">See examples →</a>
+        </article>
+        <article>
+          <i class="fa-solid fa-cube" aria-hidden="true"></i>
+          <h3>3D Modelling &amp; Environments</h3>
+          <p>Blender modelling, photogrammetry pipelines, and real-world environment reconstruction for games and simulations.</p>
+          <a href="#portfolio">See examples →</a>
+        </article>
+        <article>
+          <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          <h3>Computer Vision &amp; Simulation</h3>
+          <p>Real-time OpenCV pipelines, CFD-driven visualisations, and bespoke prototypes for research-grade applications.</p>
+          <a href="#contact">Let's talk →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PORTFOLIO ============== -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="sub-title">Selected Work</h2>
+      <div class="work-list">
+        <article class="work">
+          <img src="images/work-1.png" alt="FPS game prototype screenshot" loading="lazy" />
+          <div class="layer">
+            <h3>FPS Game Prototype</h3>
+            <p>Enemy AI &amp; player controller built in Unity / C#.</p>
+            <a href="project.html?id=fps" aria-label="View FPS project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        <article class="work">
+          <img src="images/work-2.png" alt="VR drone controller screenshot" loading="lazy" />
+          <div class="layer">
+            <h3>VR Drone Controller</h3>
+            <p>Immersive VR-based drone control with real-time camera feed.</p>
+            <a href="project.html?id=drone" aria-label="View VR drone controller project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        <article class="work">
+          <img src="images/work-3.png" alt="Spacecraft 3D models" loading="lazy" />
+          <div class="layer">
+            <h3>Spacecraft 3D Models</h3>
+            <p>High-quality Blender models for space-themed games.</p>
+            <a href="project.html?id=space" aria-label="View spacecraft 3D models project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        <article class="work">
+          <img src="images/work-4.png" alt="VR flood simulation" loading="lazy" />
+          <div class="layer">
+            <h3>VR Flood Simulation</h3>
+            <p>Real-location photogrammetry &amp; HDRP water simulation in VR.</p>
+            <a href="project.html?id=flood" aria-label="View flood simulation project"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+          </div>
+        </article>
+      </div>
+      <a href="https://github.com/rahulkumar67-del" target="_blank" rel="noopener" class="btn btn-outline btn-center">See more on GitHub</a>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section id="contact">
+    <div class="container">
+      <div class="row contact-row">
+        <div class="contact-left">
+          <h2 class="sub-title">Get In Touch</h2>
+          <p class="contact-intro">Open to internships, freelance, and collaboration opportunities. The fastest way to reach me is by email.</p>
+          <p><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <a href="mailto:krindustries966@gmail.com">krindustries966@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+919610040837">+91 96100 40837</a></p>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mandi, Himachal Pradesh, India</p>
+          <div class="social-icons">
+            <a href="https://github.com/rahulkumar67-del" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/kr.543131/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+          </div>
+          <a href="images/Rahul Kumar Resume.pdf" download class="btn btn-primary">Download Resume</a>
+        </div>
+
+        <div class="contact-right">
+          <form id="contact-form" name="contact" class="contact-form" novalidate>
+            <h3>Send a message</h3>
+            <div class="form-row">
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+              <input type="email" id="cf-email" name="email" placeholder="Email address" required />
+            </div>
+            <input type="text" id="cf-subject" name="subject" placeholder="Subject" />
+            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or opportunity…" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p id="cf-status" class="cf-status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
 
-      <div class="about-col-2">
-        <h1 class="sub-title">About Me</h1>
-        <p>
-          Hello! I'm <b>Rahul Kumar</b>, a dedicated and innovative game developer with a strong focus on building immersive and technically advanced interactive experiences.
-          My expertise spans <b>Unity 3D, VR/AR development, and computer vision</b> using OpenCV, enabling me to craft cutting-edge prototypes that blend creativity with performance.
-          I’m deeply committed to learning emerging technologies, solving real-world challenges through smart design, and pushing the limits of what’s possible in gaming and simulation.
-          My goal is to contribute to transformative projects that inspire, educate, and redefine how people interact with digital worlds.
-        </p>
-
-        <div class="tab-titles">
-          <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-          <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
-          <p class="tab-links" onclick="opentab('education', event)">Education</p>
-        </div>
-
-        <!-- Skills -->
-        <div class="tab-contents active-tab" id="skills">
-          <ul>
-            <li><span>Unity</span></li>
-            <li><span>Unity 3D Game Development</span></li>
-            <li><span>VR Development</span></li>
-            <li><span>Blender</span></li>
-            <li><span>3D Environment</span></li>
-            <li><span>3D Simulation</span></li>
-            <li><span>Photogrammetry</span></li>
-            <li><span>C# / .NET</span></li>
-            <li><span>OpenXR / Oculus</span></li>
-            <li><span>SolidWorks / CAD</span></li>
-          </ul>
-        </div>
-
-        <!-- Experience -->
-        <div class="tab-contents" id="experience">
-          <div class="exp-item">
-            <div class="exp-head">
-              <div class="exp-role">VR Development Intern</div>
-              <div class="exp-meta">ACS Lab, IIT Mandi • 2024 — 2025</div>
-            </div>
-            <div class="exp-body">
-              <div class="exp-desc">
-                Worked on research-grade VR interactions and headset integration. Responsible for prototyping locomotion systems, implementing hand-tracking controls and optimizing rendering for standalone headsets.
-              </div>
-              <ul class="exp-resp">
-                <li>Designed &amp; implemented player locomotion (teleport/smooth hybrid) to reduce motion sickness.</li>
-                <li>Built custom input handlers for tracked controllers and integrated OpenXR.</li>
-                <li>Optimized shaders and draw calls to keep stable 72+ FPS on target devices.</li>
-                <li>Collaborated with hardware team to test camera streaming and latency.</li>
-              </ul>
-              <div class="exp-links">
-                <a href="https://drive.google.com/file/d/1fIigLsMPIXL6EtCqmQKqT_o0OdBzvohA/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">View Internship Certificate</a>
-                <a href="https://github.com/rahulkumar67-del/VR_DroneController" target="_blank" rel="noopener" class="cert-link">Related GitHub</a>
-              </div>
-            </div>
+      <!-- Feedback Panel -->
+      <div id="feedback-panel">
+        <div class="feedback-summary">
+          <div class="summary-left">
+            <div id="avg-rating" class="avg-rating">0.0</div>
+            <div class="avg-stars" id="avg-stars"></div>
+            <div class="rating-count" id="rating-count">0 reviews</div>
           </div>
-
-          <div class="exp-item">
-            <div class="exp-head">
-              <div class="exp-role">AR Glasses Development Intern</div>
-              <div class="exp-meta">Glimpse Tech (Remote) • 1 June 2025 – 30 June 2025</div>
-            </div>
-            <div class="exp-body">
-              <div class="exp-desc">
-                Developed an AR glasses solution for visually impaired people.
-              </div>
-              <ul class="exp-resp">
-                <li>Developed and implemented interactive UI systems in Unity, integrating backend logic for seamless functionality.</li>
-                <li>Used OpenCV for real-time frame processing across multiple camera modes.</li>
-                <li>Established UDP communication for efficient data sharing between modules.</li>
-                <li>Reviewed and mentored student projects, providing feedback on code structure and game development workflow.</li>
-              </ul>
-              <div class="exp-links">
-                <a href="https://drive.google.com/file/d/1EkbydPc-JJbb78G5tUM5j32qb1PR8_0w/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">View Internship Certificate</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Freelancer Experience -->
-          <div class="exp-item">
-            <div class="exp-head">
-              <div class="exp-role">Freelancer – VR Environment & Simulation</div>
-              <div class="exp-meta">ClimaTech • 2024 — Present</div>
-            </div>
-            <div class="exp-body">
-              <div class="exp-desc">
-                Worked on flood simulation and environment building using photogrammetry for VR.
-              </div>
-              <ul class="exp-resp">
-                <li>Designed &amp; implemented player movement and interaction for VR environments.</li>
-                <li>Built 3D models of real-world locations using Polycam and refined them in Blender.</li>
-                <li>Configured HDRP water systems in Unity and optimized them to achieve 90–110 FPS.</li>
-                <li>Collaborated with the hardware/cloud team to import and visualize flow parameters in real time.</li>
-              </ul>
-              <div class="exp-links">
-                <a href="#" target="_blank" rel="noopener" class="cert-link">View Project / Certificate</a>
-                <a href="#" target="_blank" rel="noopener" class="cert-link">Related GitHub</a>
-              </div>
-            </div>
+          <div class="summary-right">
+            <button id="open-feedback-btn" class="btn btn-outline" type="button">Leave Feedback</button>
           </div>
         </div>
 
-        <!-- Education -->
-        <div class="tab-contents" id="education">
-          <div class="edu-item">
-            <div class="edu-head">
-              <div class="edu-course">B.Tech (Mechanical Engineering)</div>
-              <div class="edu-meta">IIT Mandi • 2023 — Present</div>
-            </div>
-            <div class="edu-body">
-              <div class="edu-desc">
-                Specialization in Mechanical Engineering with coursework in Modelling &amp; Simulation and Computational Fluid Dynamics. Actively integrating game/VR projects with mechanical design research.
-              </div>
-              <ul class="edu-points">
-                <li>Department: Mechanical Engineering</li>
-                <li>Relevant coursework: CFD, Modelling &amp; Simulation, 3D Printing, CAD</li>
-                <li>Activities: VR research group, LiDAR mapping</li>
-              </ul>
-              <div class="edu-links">
-                <a href="#" class="cert-link">Transcript / Profile (if any)</a>
-              </div>
+        <div id="feedback-list-wrap">
+          <div id="feedback-list" class="feedback-list"></div>
+          <div id="feedback-empty" class="no-feedback">No feedback yet — be the first to leave one!</div>
+        </div>
+
+        <div id="feedback-form-wrap" class="feedback-form-wrap hidden">
+          <h3>Leave a Feedback</h3>
+          <input id="fb-name" type="text" placeholder="Your name (required)" />
+          <input id="fb-role" type="text" placeholder="Your role / company (optional)" />
+          <div class="rating-input">
+            <label>Your rating:</label>
+            <div id="star-input" class="star-input" data-rating="5">
+              <span data-value="1" class="star">☆</span>
+              <span data-value="2" class="star">☆</span>
+              <span data-value="3" class="star">☆</span>
+              <span data-value="4" class="star">☆</span>
+              <span data-value="5" class="star">☆</span>
             </div>
           </div>
-
-          <div class="edu-item">
-            <div class="edu-head">
-              <div class="edu-course">High School / Senior Secondary</div>
-              <div class="edu-meta">Govt School • 2020 — 2022</div>
-            </div>
-            <div class="edu-body">
-              <div class="edu-desc">
-                Completed higher secondary with focus on science and mathematics.
-              </div>
-            </div>
+          <textarea id="fb-message" rows="4" placeholder="Write your feedback (required)"></textarea>
+          <div class="fb-actions">
+            <button id="fb-submit" class="btn btn-primary">Submit</button>
+            <button id="fb-cancel" class="btn btn-outline">Cancel</button>
+            <span id="fb-form-msg" class="cf-status"></span>
           </div>
         </div>
-
-      </div> <!-- about-col-2 -->
-    </div>   <!-- row -->
-  </div>     <!-- container -->
-</div>       <!-- about -->
-
-
-    <!-- --------------services-------------- -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-gamepad"></i>
-                    <h2>Game Devlopment</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-vr-cardboard"></i>
-                    <h2>Vr Devlopment</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-cube"></i>
-                    <h2>Blender</h2>
-                    <p></p>
-                    <a href="#">Learn more</a>
-                </div> 
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ----------- Portfolio Section ----------- -->
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work</h1>
-            <div class="work-list">
-                <div class="work">
-                   
-                    <img src="images/work-1.png" >
-                    <div class="layer">
-                        <h3>Fps game</h3>
-                        <p>This prototype of enemy ai and player controller script </p>
-                        <a href="project.html?id=fps"><i class="fa-solid fa-link"></i></a>
-                      
-
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-2.png" >
-                    <div class="layer">
-                        <h3>Vr Drone controller</h3>
-                        <p>Immersive VR-based drone control system with real-time navigation and camera feed. </p>
-                         <a href="project.html?id=drone"><i class="fa-solid fa-link"></i></a>
-                     
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-3.png" >
-                    <div class="layer">
-                        <h3>Space crafts model</h3>
-                        <p>THigh-quality spacecraft models made in Blender for integration into space-themed games. </p>
-                         <a href="project.html?id=space"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                 <div class="work">
-                    <img src="images/work-4.png" >
-                    <div class="layer">
-                        <h3>Space crafts model</h3>
-                        <p>Real location based 3d model based flood simulation  </p>
-                         <a href="project.html?id=Flood Simulation"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
-            <a href="#" class="btn">See more </a>
-        </div>
-    </div>
- <!-- ----------- Contact + Feedback Section (Freelancer-like) ----------- -->
-<div id="contact">
-  <div class="container">
-    <div class="row">
-      <!-- Left: Contact Info & Socials (kept) -->
-      <div class="contact-left">
-        <h1 class="sub-title">Contact & Socials</h1>
-        <p> <i class="fa-solid fa-paper-plane"></i> krindustries966@gmail.com</p>
-        <p><i class="fa-solid fa-phone"></i> 9610040837</p>
-        <div class="social-icons">
-          <a href="https://github.com/rahulkumar67-del"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/rahul-kumar-a51002299/"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/kr.543131/?hl=en"><i class="fa-brands fa-square-instagram"></i></a>
-        </div>
-        <a href="images/RahulKumarResume.pdf" download class="btn btn2"> Download CV</a>
       </div>
-
-      <!-- Right: Feedback (Freelancer-like) -->
-      <div class="contact-right">
-        <div id="feedback-panel">
-          <!-- Summary (avg rating + total feedbacks) -->
-          <div class="feedback-summary">
-            <div class="summary-left">
-              <div id="avg-rating" class="avg-rating">0.0</div>
-              <div class="avg-stars" id="avg-stars"></div>
-              <div class="rating-count" id="rating-count">0 reviews</div>
-            </div>
-            <div class="summary-right">
-              <!-- replace existing with -->
-                <button id="open-feedback-btn" class="btn btn2" type="button">Leave Feedback</button>
-
-            </div>
-          </div>
-
-          <!-- Feedback list -->
-          <div id="feedback-list-wrap">
-            <div id="feedback-list" class="feedback-list"></div>
-            <div id="feedback-empty" class="no-feedback">No feedback yet. Be the first to leave feedback!</div>
-          </div>
-
-          <!-- Feedback Form (collapsible) -->
-          <div id="feedback-form-wrap" class="feedback-form-wrap hidden">
-            <h2 style="margin-bottom:10px;color:#fff">Leave a Feedback</h2>
-            <input id="fb-name" type="text" placeholder="Your name (required)" />
-            <input id="fb-role" type="text" placeholder="Your role / company (e.g., Client, Manager)" />
-            <div class="rating-input">
-              <label style="color:#fff;margin-right:8px;">Your rating:</label>
-              <div id="star-input" class="star-input" data-rating="5">
-                <span data-value="1" class="star">☆</span>
-                <span data-value="2" class="star">☆</span>
-                <span data-value="3" class="star">☆</span>
-                <span data-value="4" class="star">☆</span>
-                <span data-value="5" class="star">☆</span>
-              </div>
-            </div>
-            <textarea id="fb-message" rows="5" placeholder="Write your feedback (required)"></textarea>
-            <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
-              <button id="fb-submit" class="btn btn2">Submit</button>
-              <button id="fb-cancel" class="btn" style="background:transparent;border-color:#666">Cancel</button>
-              <div id="fb-form-msg" style="margin-left:12px;color:#61b752"></div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end contact-right -->
     </div>
-  </div>
-</div>
+  </section>
 
-    <!-- JavaScript for Tab Switching -->
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname, event) {
-            for (let tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (let tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwqVqbzg2UG21XzHvpd1wNRbMXBS_7XKbowmZKe0YmPYckvPiJVGVnY07Ju6l4DmzR_aw/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-    
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            
-            msg.innerHTML = "Message Sent successfully"; // Show message immediately
-            
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    setTimeout(function() {
-                        msg.innerHTML = ""
-                    }, 5000) // Remove message after 5 sec
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-
-    </script>
-
-
-<!-- Modal Overlay (Service Details)
-<div id="service-modal-overlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal" role="document" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title">Service Title</h3>
-      <button id="modal-close" class="close-btn" aria-label="Close">✕</button>
+  <!-- ============== FOOTER ============== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Rahul Kumar. Built with care. <a href="#header">Back to top ↑</a></p>
     </div>
-    <div class="modal-body" id="modal-body">
-      <p id="modal-desc">Service description...</p>
-      <ul id="modal-points">
-        <li>Point one</li>
-        <li>Point two</li>
-      </ul>
-      <div class="meta" id="modal-meta">Starting at: ₹0 • Delivery: 1 week</div>
-    </div>
-  </div>
-</div> -->
+  </footer>
 
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+  <script src="js/feedback.js" defer></script>
 </body>
 </html>
