@@ -29,8 +29,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Change to "./" if you copy final/ contents to the repo root
-          path: "./final"
+          path: "./"
 
   deploy:
     needs: build
