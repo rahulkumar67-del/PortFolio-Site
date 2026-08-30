@@ -1,88 +1,96 @@
 /* =========================================
-   projects.js — dynamic project detail page
+   Aerovant — projects.js
+   Renders a case study from data/projects.json
    ========================================= */
 (function () {
   'use strict';
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
+  const root = document.getElementById('case-root');
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (!root) return;
 
-  const headerEl = document.getElementById('project-header');
-  const bodyEl = document.getElementById('project-body');
-  const footerEl = document.getElementById('project-footer');
+  const esc = (s) =>
+    String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-  if (!id) {
-    document.querySelector('.project-page').innerHTML = `
-      <a href="index.html#portfolio" class="back-btn">
-        <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
-      </a>
-      <h2 style="color:#e6edf7">No project specified.</h2>
-    `;
-    return;
-  }
+  const id = new URLSearchParams(window.location.search).get('id');
 
-  fetch('./data/projects.json')
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(data => {
-      const p = data[id];
-      if (!p) {
-        document.querySelector('.project-page').innerHTML = `
-          <a href="index.html#portfolio" class="back-btn">
-            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
-          </a>
-          <h2 style="color:#e6edf7">Project not found: ${escapeHtml(id)}</h2>
-        `;
-        return;
-      }
+  const notFound = (msg) => {
+    root.innerHTML =
+      '<div class="case-head">' +
+        '<p class="kicker">Not found</p>' +
+        '<h1>We couldn’t load that case study.</h1>' +
+        '<p class="case-summary">' + esc(msg) + '</p>' +
+      '</div>' +
+      '<a href="index.html#work" class="btn btn-primary">Back to all work</a>';
+  };
 
-      document.title = `${p.title} — Rahul Kumar`;
+  if (!id) { notFound('No project was specified in the link.'); return; }
 
-      headerEl.innerHTML = `
-        <h1>${escapeHtml(p.title)}</h1>
-        <div class="project-tags">
-          ${Array.isArray(p.tech) ? p.tech.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('') : ''}
-        </div>
-        <div class="project-meta">
-          <span><i class="fa-solid fa-desktop"></i> Platform: ${escapeHtml(p.platform || '—')}</span>
-          <span><i class="fa-solid fa-calendar"></i> Year: ${escapeHtml(p.year || '—')}</span>
-        </div>
-      `;
+  fetch('data/projects.json', { cache: 'no-cache' })
+    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then((all) => {
+      const p = all[id];
+      if (!p) { notFound('There is no project with the id “' + id + '”.'); return; }
 
-      let videoHTML = '';
-      if (p.video && typeof p.video === 'string' && p.video.includes('drive.google.com')) {
-        videoHTML = `<div class="video-container"><iframe src="${p.video}" allow="autoplay; fullscreen" allowfullscreen></iframe></div>`;
-      } else if (p.video) {
-        videoHTML = `<div class="video-container"><video controls poster="${p.thumbnail || ''}"><source src="${p.video}" type="video/mp4"></video></div>`;
-      }
+      document.title = p.title + ' — Aerovant';
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute('content', p.summary || '');
 
-      const downloadAttr = (p.download && !/^#?$/.test(p.download)) ? 'download' : '';
-      bodyEl.innerHTML = `
-        <h2>Project Description</h2>
-        <p>${escapeHtml(p.description || '')}</p>
-        ${videoHTML}
-        ${p.download ? `<a href="${p.download}" class="download-btn" ${downloadAttr}><i class="fa-solid fa-download"></i> Download Project</a>` : ''}
-      `;
+      const metaHtml = Object.entries(p.meta || {})
+        .map(([k, v]) => '<div><dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd></div>')
+        .join('');
 
-      footerEl.innerHTML = `
-        <h3>Project Details</h3>
-        <ul>
-          <li><i class="fa-solid fa-circle-info"></i> Platform: ${escapeHtml(p.platform || '—')}</li>
-          <li><i class="fa-solid fa-circle-info"></i> Year: ${escapeHtml(p.year || '—')}</li>
-          ${p.github ? `<li><i class="fa-brands fa-github"></i> GitHub: <a href="${p.github}" target="_blank" rel="noopener">${escapeHtml(p.github)}</a></li>` : ''}
-        </ul>
-      `;
+      const heroHtml = p.hero
+        ? '<div class="case-hero"><picture>' +
+            (p.heroWebp ? '<source srcset="' + esc(p.heroWebp) + '" type="image/webp" />' : '') +
+            '<img src="' + esc(p.hero) + '" alt="' + esc(p.heroAlt || p.title) + '" ' +
+            'width="1600" height="900" />' +
+          '</picture></div>'
+        : '';
+
+      const bodyHtml = (p.sections || [])
+        .map((s) => '<h2>' + esc(s.h) + '</h2><p>' + esc(s.p) + '</p>')
+        .join('');
+
+      const videoHtml = p.video
+        ? '<div class="video-frame"><iframe src="' + esc(p.video) +
+          '" title="' + esc(p.title) + ' — demo" allow="autoplay; fullscreen" ' +
+          'allowfullscreen loading="lazy"></iframe></div>'
+        : '';
+
+      const highlightsHtml = (p.highlights && p.highlights.length)
+        ? '<div class="aside-block"><h3>Engineering highlights</h3><ul>' +
+          p.highlights.map((h) => '<li>' + esc(h) + '</li>').join('') +
+          '</ul></div>'
+        : '';
+
+      const techHtml = (p.tech && p.tech.length)
+        ? '<div class="aside-block"><h3>Stack</h3><ul class="aside-tags">' +
+          p.tech.map((t) => '<li>' + esc(t) + '</li>').join('') +
+          '</ul></div>'
+        : '';
+
+      root.innerHTML =
+        '<div class="case-head">' +
+          '<p class="kicker">' + esc(p.kicker || 'Case study') + '</p>' +
+          '<h1>' + esc(p.title) + '</h1>' +
+          '<p class="case-summary">' + esc(p.summary) + '</p>' +
+        '</div>' +
+        heroHtml +
+        (metaHtml ? '<dl class="case-meta">' + metaHtml + '</dl>' : '') +
+        '<div class="case-layout">' +
+          '<div class="case-body">' + bodyHtml + videoHtml + '</div>' +
+          '<aside class="case-aside">' + highlightsHtml + techHtml + '</aside>' +
+        '</div>' +
+        '<div class="case-foot">' +
+          '<p>Working on something similar?</p>' +
+          '<a href="index.html#contact" class="btn btn-primary">Start a project</a>' +
+        '</div>';
     })
-    .catch(err => {
-      console.error('Failed to load project:', err);
-      document.querySelector('.project-page').innerHTML = `
-        <a href="index.html#portfolio" class="back-btn">
-          <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
-        </a>
-        <h2 style="color:#e6edf7">Failed to load project details.</h2>
-      `;
+    .catch(() => {
+      notFound('The case-study data could not be loaded. If you are opening this file directly, run a local server instead — fetch() is blocked on file:// URLs.');
     });
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
-  }
 })();

@@ -3,144 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Details — Rahul Kumar</title>
-  <meta name="description" content="Detailed project case study by Rahul Kumar." />
-  <meta name="theme-color" content="#0a0f1a" />
+  <title>Case study — Aerovant</title>
+  <meta name="description" content="Case study — Aerovant, simulation and XR engineering studio." />
+  <meta name="theme-color" content="#0B0F14" />
 
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="icon" href="images/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a4f0267e44.js" crossorigin="anonymous" defer></script>
 
   <style>
-    body { background: var(--bg); color: var(--text); font-family: var(--font); }
-    .project-page { max-width: 1100px; margin: 0 auto; padding: 60px var(--container-x); }
+    .case-nav {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(8px);
+    }
+    .case-nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px; padding-bottom: 16px; gap: 16px;
+    }
     .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 36px;
-      padding: 11px 22px;
-      color: var(--text);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text-dim); font-size: 14.5px; font-weight: 500;
     }
-    .back-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); transform: translateX(-4px); }
+    .back-btn:hover { color: var(--accent); }
 
-    .project-header, .project-body, .project-footer {
-      background: var(--surface);
-      padding: 32px;
+    .case { padding: 56px 0 90px; }
+    .case-head { max-width: 780px; margin-bottom: 40px; }
+    .case-head h1 {
+      font-family: var(--f-display);
+      font-size: clamp(30px, 5vw, 50px);
+      font-weight: 800; letter-spacing: -0.032em;
+      line-height: 1.05; margin: 12px 0 18px;
+      text-wrap: balance;
+    }
+    .case-summary { font-size: clamp(16px, 1.6vw, 19px); color: var(--text-dim); }
+
+    .case-hero {
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
+      overflow: hidden; margin-bottom: 44px;
+      background: var(--surface);
     }
-    .project-header h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      margin: 0 0 14px;
-      color: var(--text);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .project-tags { margin: 14px 0; display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      display: inline-block;
-      background: var(--accent-soft);
-      border: 1px solid rgba(34,211,238,0.3);
-      color: var(--accent);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 500;
-      font-family: var(--mono);
-    }
-    .project-meta {
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--text-dim);
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .project-meta i { color: var(--accent); margin-right: 6px; }
+    .case-hero picture { display: block; }
+    .case-hero img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; background: var(--bg); }
 
-    .project-body h2 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: var(--text);
-      font-weight: 600;
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0; margin-bottom: 44px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .project-body p {
-      line-height: 1.7;
-      margin-bottom: 22px;
-      color: var(--text-dim);
-      font-size: 15.5px;
+    .case-meta div { padding: 18px 20px 18px 0; }
+    .case-meta div + div { padding-left: 20px; border-left: 1px solid var(--border); }
+    .case-meta dt {
+      font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 5px;
     }
-    .video-container {
-      max-width: 100%;
-      margin: 0 auto 24px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      aspect-ratio: 16 / 9;
-      background: #000;
-    }
-    .video-container iframe,
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      border: 0;
-    }
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 28px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #051018;
-      border: 0;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--accent-glow);
-      color: #051018;
-    }
+    .case-meta dd { font-size: 15px; color: var(--text); font-weight: 500; }
 
-    .project-footer h3 { font-size: 18px; margin-bottom: 14px; color: var(--text); font-weight: 600; }
-    .project-footer ul { padding: 0; margin: 0; }
-    .project-footer ul li {
-      margin: 10px 0;
-      font-size: 15px;
-      color: var(--text-dim);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .case-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+      gap: 56px; align-items: start;
     }
-    .project-footer ul li i { color: var(--accent); }
-    .project-footer ul li a { color: var(--accent); word-break: break-all; }
+    .case-body h2 {
+      font-family: var(--f-display);
+      font-size: 22px; font-weight: 700;
+      letter-spacing: -0.018em; color: var(--text);
+      margin: 38px 0 14px;
+    }
+    .case-body h2:first-child { margin-top: 0; }
+    .case-body p { color: var(--text-dim); font-size: 16px; line-height: 1.75; max-width: 68ch; }
+
+    .case-aside { display: flex; flex-direction: column; gap: 30px; position: sticky; top: 84px; }
+    .aside-block h3 {
+      font-family: var(--f-mono); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted); padding-bottom: 10px;
+      border-bottom: 1px solid var(--border); margin-bottom: 14px;
+    }
+    .aside-block ul { display: flex; flex-direction: column; gap: 10px; }
+    .aside-block li {
+      color: var(--text-dim); font-size: 14.5px; line-height: 1.5;
+      padding-left: 16px; position: relative;
+    }
+    .aside-block li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    }
+    .aside-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .aside-tags li {
+      font-family: var(--f-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); padding: 4px 9px;
+      border: 1px solid var(--border); border-radius: 3px;
+    }
+    .aside-tags li::before { display: none; }
+    .aside-tags li { padding-left: 9px; }
+
+    .video-frame {
+      margin: 34px 0; border-radius: var(--radius);
+      overflow: hidden; border: 1px solid var(--border);
+      aspect-ratio: 16/9; background: #000;
+    }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .case-foot {
+      margin-top: 60px; padding-top: 34px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; flex-wrap: wrap;
+    }
+    .case-foot p { color: var(--text-dim); font-size: 15.5px; }
+
+    @media (max-width: 940px) {
+      .case-layout { grid-template-columns: 1fr; gap: 38px; }
+      .case-aside { position: static; }
+      .case-meta div + div { padding-left: 0; border-left: none; border-top: 1px solid var(--border); }
+    }
   </style>
 </head>
 <body>
-  <div class="project-page">
-    <a href="index.html#portfolio" class="back-btn">
-      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
-    </a>
 
-    <div class="project-header" id="project-header"></div>
-    <div class="project-body" id="project-body"></div>
-    <div class="project-footer" id="project-footer"></div>
+  <div class="case-nav">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Aerovant — home">
+        <svg class="brand-mark sm" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+          <rect width="512" height="512" rx="113" fill="#E8A33D"/>
+          <path d="M256 132 L378 344 L256 292 L134 344 Z" fill="#0B0F14"/>
+          <rect x="134" y="386" width="244" height="22" rx="11" fill="#0B0F14"/>
+        </svg>
+        <span class="brand-word" style="font-size:17px">Aerovant</span>
+      </a>
+      <a href="index.html#work" class="back-btn">← All work</a>
+    </div>
   </div>
+
+  <div class="container case">
+    <div id="case-root" aria-live="polite"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark sm" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+          <rect width="512" height="512" rx="113" fill="#E8A33D"/>
+          <path d="M256 132 L378 344 L256 292 L134 344 Z" fill="#0B0F14"/>
+          <rect x="134" y="386" width="244" height="22" rx="11" fill="#0B0F14"/>
+        </svg>
+        <span>Aerovant</span>
+      </div>
+      <p class="footer-meta">Simulation &amp; XR engineering · Mandi, India · © <span id="year"></span></p>
+      <a href="index.html" class="footer-top">Home</a>
+    </div>
+  </footer>
 
   <script src="js/projects.js" defer></script>
 </body>

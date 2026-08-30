@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Aerovant">
+  <rect width="512" height="512" rx="113" fill="#E8A33D"/>
+  <path d="M256 132 L378 344 L256 292 L134 344 Z" fill="#0B0F14"/>
+  <rect x="134" y="386" width="244" height="22" rx="11" fill="#0B0F14"/>
+</svg>

@@ -1,46 +1,115 @@
 {
-  "fps": {
-    "title": "FPS Game Prototype",
-    "description": "An FPS prototype built in Unity featuring a custom player controller, enemy AI with patrol/chase/attack states, and core shooting mechanics. Focused on snappy game-feel, modular AI behaviour, and lean architecture for future expansion.",
-    "video": "https://drive.google.com/file/d/1s32ERAe1zJx6xfN6tjtvjyGWpxF9HAbl/preview",
-    "thumbnail": "images/work-1.png",
-    "download": "",
-    "github": "https://github.com/rahulkumar67-del/fps-game",
-    "tech": ["Unity", "C#", "AI", "FPS"],
-    "platform": "PC / VR Ready",
-    "year": "2025"
+  "gcs": {
+    "title": "Tactical Drone GCS Simulator",
+    "badge": "Delivered",
+    "kicker": "Training simulator",
+    "summary": "A multi-screen ground control station that trains drone operators without any physical flight hardware — delivered to a paying client as a licensed, installer-packaged product.",
+    "hero": "images/case-gcsdrone.png",
+    "heroWebp": "images/case-gcsdrone.webp",
+    "heroAlt": "Tactical Drone GCS Simulator interface",
+    "meta": { "Role": "Sole engineer", "Engagement": "Fixed-scope contract", "Year": "2026", "Platform": "Windows desktop" },
+    "sections": [
+      {
+        "h": "The problem",
+        "p": "Training a drone operator normally means occupying the real aircraft and the real ground control station. That hardware is expensive, shared between teams, and completely unavailable while it is deployed. Early-stage operators end up learning the interface on the equipment least able to spare the time — and a mistake during training costs an airframe."
+      },
+      {
+        "h": "What we built",
+        "p": "A full ground control station reproduced in Unity, running as a standalone desktop application. Operators work across the same multi-screen layout they would face in the field: telemetry visualisation updating live, and a flight-mode state machine that moves the aircraft between operating modes exactly as the real system does. The result is a trainer that puts an operator in front of a realistic console with nothing on the flight line committed."
+      },
+      {
+        "h": "How it was engineered",
+        "p": "The interface is driven by a live telemetry pipeline rather than scripted playback, so the displays respond to simulated aircraft state the way they would to a real feed. Flight-mode management runs through an explicit state machine, which keeps mode transitions legible and testable instead of scattered through UI callbacks — the difference between a demo and something an instructor can rely on. The build ships as a signed installer with license activation, so the client can distribute it to trainees as a normal piece of software."
+      },
+      {
+        "h": "Outcome",
+        "p": "Delivered, licensed, and packaged for distribution — giving operators multi-screen situational-awareness practice without requiring physical flight hardware."
+      }
+    ],
+    "highlights": [
+      "Multi-screen ground control station interface",
+      "Live telemetry visualisation, not scripted playback",
+      "Explicit state machine for flight-mode management",
+      "Packaged installer with license activation"
+    ],
+    "tech": ["Unity", "C#", "Telemetry", "State machines", "Inno Setup"]
   },
-  "drone": {
-    "title": "VR Drone Controller",
-    "description": "Immersive VR-based drone control system with real-time first-person navigation and live camera feed. Built with custom OpenXR input handlers and a hybrid teleport/smooth locomotion model for comfort.",
-    "video": "https://drive.google.com/file/d/18dRAiwGzXRB52Tbx-E7rZ074fNfN7oYj/preview",
-    "thumbnail": "images/work-2.png",
-    "download": "",
-    "github": "https://github.com/rahulkumar67-del/VR_DroneController",
-    "tech": ["Unity", "VR", "OpenXR", "C#"],
-    "platform": "VR (Quest / OpenXR)",
-    "year": "2025"
+
+  "uas": {
+    "title": "UAS simulation engine",
+    "badge": "162 automated tests",
+    "kicker": "Simulation engineering",
+    "summary": "A from-scratch tactical UAS simulation engine, built so that navigation degrades the way it does in the field — and so that real defence tooling can ingest its output unmodified.",
+    "hero": "images/case-uas-engine.png",
+    "heroWebp": "images/case-uas-engine.webp",
+    "heroAlt": "Layered architecture diagram of the UAS simulation engine",
+    "meta": { "Role": "Sole engineer", "Engagement": "Internal R&D", "Year": "2026", "Platform": "Python engine + Unity front end" },
+    "sections": [
+      {
+        "h": "The problem",
+        "p": "Most simulators model the happy path. GPS works, the datalink holds, the sensor sees what it is pointed at. But the situations worth training for are exactly the ones where those assumptions fail — degraded satellite geometry, terrain blocking the link, navigation quietly drifting away from truth. A simulator that never degrades teaches operators to trust instruments that will eventually lie to them."
+      },
+      {
+        "h": "What we built",
+        "p": "A layered simulation engine where degradation is modelled rather than scripted. Radio-frequency propagation and terrain masking produce a carrier-to-noise ratio; that ratio drives per-satellite tracking, which produces dilution of precision, which walks the receiver down a graded fix ladder. An inertial model with a realistic error budget takes over as satellite quality falls, drifting the way real inertial systems drift. An integrity monitor cross-checks the result against visual odometry. Nothing in that chain is a lookup table — each stage is the physical consequence of the one before it."
+      },
+      {
+        "h": "How it was engineered",
+        "p": "The architecture holds four rules in code, not convention. There is exactly one clock: no module calls the system time, so replaying a seed reproduces a trace byte for byte. Publishers never block and a faulty subscriber cannot take down the simulation — the message bus uses bounded rings with counted drops and wrapped callbacks. Ground truth and reported position are deliberately separate quantities, so when navigation is being deceived the two diverge, which is the training point rather than a bug. And simulation marking is mandatory on every outbound message, enforced by tests, so simulated traffic can never be mistaken for live."
+      },
+      {
+        "h": "Interoperability",
+        "p": "The protocol adapters are written against the published standards and validated by an independent decoder, so output is not merely plausible but conformant: MISB ST 0601 metadata that motion-imagery tools parse, Cursor-on-Target events that a TAK server accepts, and IEEE 1278 distributed-simulation packets with dead-reckoning that other federates can follow. The interface control document is generated directly from the bus topic definitions, so it cannot drift away from the code."
+      },
+      {
+        "h": "Outcome",
+        "p": "162 automated tests covering every implemented module, with no stubbed placeholders. The engine is the technical foundation the training products build on."
+      }
+    ],
+    "highlights": [
+      "WGS-84 geodesy with Vincenty direct and inverse solutions",
+      "RF propagation with ITU-R P.526 knife-edge terrain masking",
+      "GNSS receiver modelled from carrier-to-noise through to a graded fix ladder",
+      "Inertial error model with emergent drift and a usable-time solver",
+      "Protocol-conformant KLV, CoT and DIS output",
+      "Interface control document generated from the code, never hand-edited"
+    ],
+    "tech": ["Python", "MISB ST 0601", "IEEE 1278 DIS", "Cursor on Target", "GNSS / INS", "pytest"]
   },
-  "space": {
-    "title": "Spacecraft 3D Models",
-    "description": "A curated set of high-quality spacecraft models authored in Blender — topology optimised for real-time engines, PBR-textured, and ready to drop into Unity or Unreal space-themed projects.",
-    "video": "https://drive.google.com/file/d/1vt9DCYp7fVBhtnbWUCPAqACfXU8wXdjo/preview",
-    "thumbnail": "images/work-3.png",
-    "download": "",
-    "github": "https://github.com/rahulkumar67-del",
-    "tech": ["Blender", "3D Modelling", "PBR Textures"],
-    "platform": "Game Assets",
-    "year": "2025"
-  },
+
   "flood": {
-    "title": "VR Flood Simulation",
-    "description": "A real-location, photogrammetry-driven flood simulation in VR. Real terrain captured with Polycam, refined in Blender, and integrated into Unity with HDRP water — optimised to 90–110 FPS while ingesting live flow parameters.",
-    "video": "https://drive.google.com/file/d/19z0dlUTJJxL2ZR7g38v9H5_KJYVOak6G/preview",
-    "thumbnail": "images/work-4.png",
-    "download": "",
-    "github": "https://github.com/rahulkumar67-del",
-    "tech": ["Polycam", "Unity HDRP", "VR", "Blender", "Photogrammetry"],
-    "platform": "VR / Research",
-    "year": "2025"
+    "title": "VR flood simulation",
+    "badge": "In development",
+    "kicker": "3D capture + physics",
+    "summary": "Real terrain captured by photogrammetry, flooded by a solver rather than an animation — the visuals and the physics come from the same project.",
+    "hero": "images/case-flood.png",
+    "heroWebp": "images/case-flood.webp",
+    "heroAlt": "Real-terrain river valley reconstructed for the VR flood simulation",
+    "meta": { "Role": "Sole engineer", "Engagement": "Internal R&D", "Year": "2026", "Platform": "VR — PCVR and standalone" },
+    "sections": [
+      {
+        "h": "The problem",
+        "p": "Flood visualisations tend to be animations played over invented terrain. They look convincing and predict nothing. If the ground is not the real ground and the water is not solving anything, the result is a video — useful for a presentation, useless for understanding what a specific river does to a specific village."
+      },
+      {
+        "h": "What we built",
+        "p": "A flood environment where both halves are real. The terrain is a photogrammetric reconstruction of an actual river valley, processed into engine-ready geometry. The water is driven by a Lattice Boltzmann fluid implementation rather than a shader animation, so flow responds to the captured bed geometry instead of being painted on top of it. The whole thing runs in VR, which is where the scale of a flood actually communicates."
+      },
+      {
+        "h": "How it was engineered",
+        "p": "Capture runs through a COLMAP and Open3D pipeline, producing both the visual surface and a decimated mesh proxy used for collision and flow boundaries — the same reconstruction serving two different jobs at two different levels of detail. The fluid solver comes from a multi-backend high-performance computing implementation, which keeps the physics honest while staying inside a real-time budget. Holding a VR frame budget against a solver and a photogrammetric environment is the central engineering constraint, and it drives every decision about level of detail."
+      },
+      {
+        "h": "Current work",
+        "p": "The next iteration replaces the reconstructed terrain surface with Gaussian splat capture for a substantial gain in visual fidelity. That introduces a real architectural problem: splats are static and rendered as sorted transparent primitives, while flood water is dynamic and must composite correctly against them. The approach is deliberately hybrid — splats for the static environment, a simulated mesh for the water, and a mesh proxy underneath for physics. Drone capture is planned for the dry season, when the riverbed is exposed and can be reconstructed accurately."
+      }
+    ],
+    "highlights": [
+      "Photogrammetric capture of real terrain, not modelled approximation",
+      "Lattice Boltzmann fluid solver rather than animated water",
+      "Single reconstruction serving both rendering and physics",
+      "Gaussian splat capture pipeline in development"
+    ],
+    "tech": ["Unity", "COLMAP", "Open3D", "Lattice Boltzmann", "CUDA / OpenMP", "VR"]
   }
 }

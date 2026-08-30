@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /docs/
 
-Sitemap: https://rahulkumar.dev/sitemap.xml
+Sitemap: https://aerovant.me/sitemap.xml

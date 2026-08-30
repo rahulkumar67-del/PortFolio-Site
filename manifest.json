@@ -1,23 +1,14 @@
 {
-  "name": "Rahul Kumar — Game & VR Developer",
-  "short_name": "Rahul Kumar",
-  "description": "Portfolio of Rahul Kumar — Game and VR/AR developer specializing in Unity 3D, OpenXR, Blender, and computer vision.",
+  "name": "Aerovant — Simulation & XR Engineering Studio",
+  "short_name": "Aerovant",
+  "description": "Training simulators, digital twins, and real-world 3D capture pipelines.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#07090f",
-  "theme_color": "#22d3ee",
+  "background_color": "#0B0F14",
+  "theme_color": "#0B0F14",
   "icons": [
-    {
-      "src": "images/logo.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "images/logo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "images/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }
